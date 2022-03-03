@@ -1,0 +1,59 @@
+if game.PlaceId == 155615604 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Velonage Prison Life Script", "Sentinel")
+ 
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+    MainSection:NewSlider("WalkSpeed", "Makes you run faster. (shift will break, just put it back)", 500, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+    MainSection:NewSlider("JumpPower", "Makes you jump higher.", 500, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+    MainSection:NewDropdown("Give Gun", "Gives a gun to you when button clicked.", {"M9", "Remington 870", "AK-47"}, function(v)
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+    end)
+    MainSection:NewLabel("Buttons")
+    MainSection:NewButton("E to Noclip", "Let's you go through objects.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/W4edvcav", true))()
+    end)
+    MainSection:NewButton("Infinite Jump", "Makes you jump infinitely.", function()
+        loadstring(game:HttpGet("pastebin.com/raw/tw4EavM9", true))()
+    end)
+    MainSection:NewButton("Infinite Yield", "Loads a scripthub.", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+    end)
+    MainSection:NewButton("Chat Bypass", "Let's you bypass the chat filter.", function()
+        loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+    end)
+    --TROLLS
+    local Trolls = Window:NewTab("Trolls")
+    local TrollsSection = Trolls:NewSection("Trolls")
+    TrollsSection:NewButton("FE Kill", "Gives you permissions to kill random players.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Ew9x27bL", true))()
+    end)
+    TrollsSection:NewButton("SpinBot Fling (kinda broken)", "Makes you spin infinitely and flings others when near you..", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/TuJe86hf", true))()
+    end)
+    TrollsSection:NewButton("FE Fake Lag", "A FE script that has fake lag.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/h0QwzmMj", true))()
+    end)
+    --PLAYER
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+    PlayerSection:NewButton("Tracers", "Points lines to other players.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/nqyGkWvx", true))()
+    end)
+    
+    PlayerSection:NewButton("Quick Respawn", "Makes you respawn quick whenever you die.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/iysnX9Rj", true))()
+    end)
+    --CREDITS
+    local Credits = Window:NewTab("Credits")
+    local CreditsSection = Credits:NewSection("Credits")
+    CreditsSection:NewLabel("Credits to Kavo for the UI Library!")
+    CreditsSection:NewLabel("Thanks to TenLeafsFX#9384 for making this script!")
+ end
